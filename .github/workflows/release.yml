@@ -20,7 +20,7 @@ jobs:
           node-version: "lts/*"
 
       - name: Update package-lock.json
-        run: npm install --package-lock-only
+        run: npm install --package-lock-only --ignore-scripts
 
       - name: Commit package-lock.json if changed
         run: |
