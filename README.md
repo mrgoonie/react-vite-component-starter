@@ -15,6 +15,7 @@ This repository was published together with an article on how to create a react 
 ## Installation
 
 You can install it with npm (don't expect much fanciness):
+
 ```bash
 npm i
 # or
@@ -48,10 +49,10 @@ bun run publish
 ## Usage
 
 ```javascript
-import { Button, Label, Input } from 'your-component-library';
+import { Button, Label, Input } from "your-component-library";
 ```
 
 ## Credits
 
-This repository was created by [@mrgoonie](https://github.com/mrgoonie).
-👉 Follow me on [X](https://x.com/goon_nguyen).
+- This repository was created by [@mrgoonie](https://github.com/mrgoonie).
+- 👉 Follow me on [X](https://x.com/goon_nguyen).
