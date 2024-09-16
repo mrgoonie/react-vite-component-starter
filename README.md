@@ -9,6 +9,9 @@ This repository was published together with an article on how to create a react 
 - React
 - TailwindCSS
 - Semantic Release
+- Commitizen
+- Conventional Commits
+- Lint-staged
 - Github Actions
 - NPM
 
@@ -39,6 +42,32 @@ bun run build
 ```
 
 ## Publish
+
+Add this to your package.json:
+
+```json
+{
+  ...
+  "release": {
+    "branches": [
+      "main"
+    ],
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/changelog",
+      "@semantic-release/git",
+      "@semantic-release/github",
+      "@semantic-release/npm"
+    ]
+  }
+  ...
+}
+```
+
+Push to main to trigger a release.
+
+Run publish directly:
 
 ```bash
 npm run publish
