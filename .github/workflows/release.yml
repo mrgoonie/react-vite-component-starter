@@ -19,6 +19,17 @@ jobs:
         with:
           node-version: "lts/*"
 
+      - name: Update package-lock.json
+        run: npm install --package-lock-only
+
+      - name: Commit package-lock.json if changed
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add package-lock.json
+          git diff --quiet && git diff --staged --quiet || git commit -m "ci(release): update package-lock.json"
+          git push
+
       - name: Install dependencies
         run: npm ci
 
