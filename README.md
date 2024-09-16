@@ -43,7 +43,10 @@ bun run build
 
 ## Publish
 
-Add this to your `.releaserc.json`:
+- Create a new Personal Access Token (PAT) from your Github settings.
+- (If you want to publish to NPM) Create a new NPM token from your NPM settings.
+- Add your PAT and NPM token to your Github repository secrets as `NPM_TOKEN` and `PAT` respectively.
+- Add this to your `.releaserc.json`:
 
 ```json
 {
@@ -69,9 +72,9 @@ Add this to your `.releaserc.json`:
 }
 ```
 
-Push to main to trigger a release.
+- Push to `main` to trigger a release.
 
-Run publish directly:
+- Or run publish directly on your local machine:
 
 ```bash
 npm run publish
