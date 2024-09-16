@@ -43,25 +43,29 @@ bun run build
 
 ## Publish
 
-Add this to your package.json:
+Add this to your `.releaserc.json`:
 
 ```json
 {
-  ...
-  "release": {
-    "branches": [
-      "main"
+  "branches": ["main"],
+  "plugins": [
+    "@semantic-release/commit-analyzer",
+    "@semantic-release/release-notes-generator",
+    [
+      "@semantic-release/npm",
+      {
+        "npmPublish": false
+      }
     ],
-    "plugins": [
-      "@semantic-release/commit-analyzer",
-      "@semantic-release/release-notes-generator",
-      "@semantic-release/changelog",
+    [
       "@semantic-release/git",
-      "@semantic-release/github",
-      "@semantic-release/npm"
-    ]
-  }
-  ...
+      {
+        "assets": ["package.json"],
+        "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+      }
+    ],
+    "@semantic-release/github"
+  ]
 }
 ```
 
